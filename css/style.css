@@ -1,4 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  font-family: 'Quicksand', sans-serif;
+  color: #28212E;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1000px;
+  height: 100%;
+}
+
 img {
   width: 100%;
+  display: block;
+}
+
+a {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #28212E;
 }
 /*# sourceMappingURL=style.css.map */
