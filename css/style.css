@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  background-color: #F2F2F3;
   font-family: 'Quicksand', sans-serif;
   color: #28212E;
   font-size: 100%;
@@ -36,12 +41,78 @@ a {
   padding: 2px;
 }
 
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 header {
   font-size: 30px;
   font-weight: bold;
   font-family: 'Special Elite', cursive;
-  text-align: center;
   padding: 15px;
   text-shadow: 5px 5px 10px #75A095;
+  min-width: 25%;
+}
+
+nav {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #28212E;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+nav li {
+  display: block;
+  float: left;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  min-width: 110px;
+}
+
+nav li:hover,
+nav li:focus-within {
+  cursor: pointer;
+}
+
+nav li:focus-within a {
+  outline: none;
+}
+
+nav ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+nav ul li:hover > ul,
+nav ul li:focus-within > ul,
+nav ul li ul:hover,
+nav ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+nav ul li ul li {
+  background-color: #F2F2F3;
+  clear: both;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

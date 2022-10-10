@@ -1,12 +1,16 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    background-color: $color-light;
     font-family: 'Quicksand', sans-serif;
     color: $color-dark;
     font-size: 100%;
     margin: 0 auto;
     padding: 0;
-    // max-width: 1000px;
     height: 100%;
-  }
+}
 
 
 img {
