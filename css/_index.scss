@@ -1,0 +1,46 @@
+.cards {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (min-width: $mq-breakpoint-mobile) {
+        flex-wrap: nowrap;
+      }
+
+    .card {
+        padding: 10px;
+        min-height: 200px;
+        min-width: 180px;
+    }
+}
+
+#icons-3 {
+    i {
+        font-size: 350%;
+    }
+}
+
+#ratings {
+
+    .card {
+        border: 2px dotted $color-accent-dark;
+        border-radius: 5px;
+        margin: 10px;
+        min-width: 25%;
+
+        // @media screen and (min-width: $mq-breakpoint-mobile) {
+        //     min-height: 380px;
+        //   }
+    }
+
+    .rating {
+        color: $color-accent-light;
+    }
+
+    h4 {
+        margin: 0;
+    }
+}

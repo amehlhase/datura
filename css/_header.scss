@@ -13,14 +13,15 @@
 
 #header {
     display: flex;
-    // vertical-align: middle;
+
+    header {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Special Elite', cursive;
+        padding: 15px;
+        text-shadow: 5px 5px 10px $color-green;
+        min-width: 25%;
+    }
+
 }
 
-header {
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Special Elite', cursive;
-    padding: 15px;
-    text-shadow: 5px 5px 10px $color-green;
-    min-width: 25%;
-}

@@ -15,7 +15,7 @@ body {
 }
 
 img {
-  width: 100%;
+  width: 20%;
   display: block;
 }
 
@@ -24,6 +24,14 @@ a {
   text-transform: uppercase;
   color: #28212E;
   text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
 }
 
 #header-stripe {
@@ -47,7 +55,7 @@ a {
   display: flex;
 }
 
-header {
+#header header {
   font-size: 30px;
   font-weight: bold;
   font-family: 'Special Elite', cursive;
@@ -114,5 +122,58 @@ nav ul li ul li {
   background-color: #F2F2F3;
   clear: both;
   width: 100%;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  .cards {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.cards .card {
+  padding: 10px;
+  min-height: 200px;
+  min-width: 180px;
+}
+
+#icons-3 i {
+  font-size: 350%;
+}
+
+#ratings .card {
+  border: 2px dotted #763C48;
+  border-radius: 5px;
+  margin: 10px;
+  min-width: 25%;
+}
+
+#ratings .rating {
+  color: #AD7246;
+}
+
+#ratings h4 {
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */
