@@ -88,9 +88,23 @@ nav li {
   min-width: 110px;
 }
 
+nav li .fa-caret-right {
+  display: none;
+}
+
 nav li:hover,
 nav li:focus-within {
   cursor: pointer;
+}
+
+nav li:hover .fa-caret-down,
+nav li:focus-within .fa-caret-down {
+  display: none;
+}
+
+nav li:hover .fa-caret-right,
+nav li:focus-within .fa-caret-right {
+  display: inline;
 }
 
 nav li:focus-within a {

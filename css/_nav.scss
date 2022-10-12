@@ -19,11 +19,26 @@ nav {
         text-decoration: none;
         transition-duration: 0.5s;
         min-width: 110px;
+
+        .fa-caret-right {
+          display: none;
+        }
       }
+
         
       li:hover,
       li:focus-within {
         cursor: pointer;
+
+
+        .fa-caret-down {
+          display:none; 
+        }
+
+        .fa-caret-right {
+          display: inline;
+        }
+
       }
       
       li:focus-within a {
@@ -55,4 +70,5 @@ nav {
         clear: both;
         width: 100%;
       }
+
 }
