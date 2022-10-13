@@ -169,11 +169,32 @@ nav ul li ul li {
 .cards .card {
   padding: 10px;
   min-height: 200px;
-  min-width: 180px;
 }
 
 #icons-3 i {
   font-size: 350%;
+  color: #75A095;
+}
+
+#icons-3 .card {
+  max-width: 350px;
+}
+
+#buttons-4 img {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  opacity: 0.8;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#buttons-4 .card {
+  width: 300px;
+}
+
+#buttons-4 .card:hover img {
+  opacity: 1;
 }
 
 #ratings .card {
