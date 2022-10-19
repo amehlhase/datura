@@ -79,3 +79,51 @@
         margin: 0;
     }
 }
+
+// Wald
+
+#forest {
+    overflow-x: hidden;
+    position: relative;
+
+    #forest-teaser  {
+        position: relative;
+        color: $color-light;
+
+        img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    .text {
+        position: absolute;
+        padding: 0 50px 0 50px;
+        top: 30%;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+    .button {
+        position: absolute;
+        bottom: 30%;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+
+        a {
+            color: $color-light;
+            border: 5px solid $color-light;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+    }
+
+
+
+}
+
+}

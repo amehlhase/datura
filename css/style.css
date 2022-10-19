@@ -211,4 +211,46 @@ nav ul li ul li {
 #ratings h4 {
   margin: 0;
 }
+
+#forest {
+  overflow-x: hidden;
+  position: relative;
+}
+
+#forest #forest-teaser {
+  position: relative;
+  color: #F2F2F3;
+}
+
+#forest #forest-teaser img {
+  height: 400px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#forest #forest-teaser .text {
+  position: absolute;
+  padding: 0 50px 0 50px;
+  top: 30%;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#forest #forest-teaser .button {
+  position: absolute;
+  bottom: 30%;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+
+#forest #forest-teaser .button a {
+  color: #F2F2F3;
+  border: 5px solid #F2F2F3;
+  border-radius: 10px;
+  padding: 10px;
+}
 /*# sourceMappingURL=style.css.map */
