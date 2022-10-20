@@ -15,8 +15,8 @@ body {
 }
 
 img {
-  width: 20%;
   display: block;
+  width: 100%;
 }
 
 a {
@@ -32,6 +32,14 @@ a {
 
 .justify {
   text-align: justify;
+}
+
+.size-50 {
+  width: 50%;
+}
+
+.size-100 {
+  width: 100%;
 }
 
 #header-stripe {
@@ -197,6 +205,27 @@ nav ul li ul li {
   opacity: 1;
 }
 
+#bildraster-3 .bildraster-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#bildraster-3 img {
+  height: 400px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #ratings .card {
   border: 2px dotted #763C48;
   border-radius: 5px;
@@ -227,6 +256,7 @@ nav ul li ul li {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 8px;
 }
 
 #forest #forest-teaser .text {
