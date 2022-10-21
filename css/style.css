@@ -274,7 +274,6 @@ nav ul li ul li {
   bottom: 30%;
   left: 0px;
   right: 0px;
-  text-align: center;
 }
 
 #forest #forest-teaser .button a {
@@ -282,5 +281,91 @@ nav ul li ul li {
   border: 5px solid #F2F2F3;
   border-radius: 10px;
   padding: 10px;
+}
+
+#memory {
+  overflow-x: hidden;
+  position: relative;
+}
+
+#memory #memory-teaser {
+  position: relative;
+  color: #763C48;
+}
+
+#memory #memory-teaser img {
+  height: 400px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.4;
+}
+
+#memory #memory-teaser .text {
+  position: absolute;
+  padding: 0 50px 0 50px;
+  top: 30%;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#memory #memory-teaser .button {
+  position: absolute;
+  bottom: 30%;
+  left: 0px;
+  right: 0px;
+}
+
+#memory #memory-teaser .button a {
+  color: #763C48;
+  border: 5px solid #763C48;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#newsletter {
+  overflow-x: hidden;
+  position: relative;
+}
+
+#newsletter #newsletter-teaser {
+  position: relative;
+  color: #28212E;
+}
+
+#newsletter #newsletter-teaser img {
+  height: 450px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.6;
+}
+
+#newsletter #newsletter-teaser .text {
+  position: absolute;
+  padding: 0 50px 0 50px;
+  top: 15%;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#newsletter #newsletter-teaser form {
+  position: absolute;
+  bottom: 20%;
+  left: 0px;
+  right: 0px;
+}
+
+#newsletter #newsletter-teaser form input {
+  border-radius: 8px;
+  color: #763C48;
+  min-width: 200px;
+  height: 40px;
 }
 /*# sourceMappingURL=style.css.map */
