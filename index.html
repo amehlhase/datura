@@ -64,39 +64,58 @@
     </section>
 
     <!-- EINSTIEG -->
-    <section>
 
-        <!-- 
-        #TODO: Slider einbauen
-        -->
+    <section id="hero">
 
-        <div>
-            <img src="/images/index/00_brina-blum-s5-NmxNA-7c-unsplash.jpg" alt="Zimmer mit mehreren Pflanzen auf einem Tisch und Regal">
-            <div>Text</div>
-            <div>
-                <a href="#">Mehr erfahren</a>
+        <div class="css-slider">
+            <input type="radio" name="slider-navigation" checked="checked" id="first-slide" />
+            <input type="radio" name="slider-navigation" id="second-slide" />
+            <input type="radio" name="slider-navigation" id="third-slide" />
+            <div class="css-slider-navigation">
+              <label class="css-slider-navigation-item" for="first-slide"></label>
+              <label class="css-slider-navigation-item" for="second-slide"></label>
+              <label class="css-slider-navigation-item" for="third-slide"></label>
             </div>
-        </div>
-
-        <div>
-            <img src="/images/index/01_magali-merzougui-ioomxAPXQxo-unsplash.jpg" alt="Calathea in Nahaufnahme">
-            <div>Text</div>
-            <div>
-                <a href="#">Mehr erfahren</a>
+            <div class="css-slider-wrapper">
+              <div class="css-slider-inner">
+                <div id="actual-first-slide" class="css-slider-item" style="background-image: url(./images/index/00_brina-blum-s5-NmxNA-7c-unsplash.jpg);">
+                  <div class="css-slider-item-inner">
+                    <div class="slide-title">
+                      Unsere Pflanzen
+                    </div>
+                    <div class="slide-subtitle">
+                      <a href="#">Zur Übersicht.</a>
+                    </div>
+                  </div>
+                </div>
+                <div id="actual-second-slide" class="css-slider-item" style="background-image: url(./images/index/01_magali-merzougui-ioomxAPXQxo-unsplash.jpg);">
+                  <div class="css-slider-item-inner">
+                    <div class="slide-title">
+                      Du hast (noch)<br />keine Ahnnung<br />von Pflanzen?
+                    </div>
+                    <div class="slide-subtitle">
+                      <a href="#">Wir helfen dir.</a>
+                    </div>
+                  </div>
+                </div>
+                <div id="actual-third-slide" class="css-slider-item" style="background-image: url(./images/index/02_neslihan-gunaydin-BduDcrySLKM-unsplash.jpg);">
+                  <div class="css-slider-item-inner">
+                    <div class="slide-title">
+                      Puh … Werkzeug,<br />
+                      Erde, Töpfe?
+                    </div>
+                    <div class="slide-subtitle">
+                      <a href="#">Erfahre hier, was du brauchst.</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div>
-            <img src="/images/index/02_neslihan-gunaydin-BduDcrySLKM-unsplash.jpg" alt="Schaufel mit Erde">
-            <div>Text</div>
-            <div>
-                <a href="#">Mehr erfahren</a>
-            </div>
-        </div>
 
-    </section>
+          <div class="divider100px"></div>
 
-    <div class="divider50px"></div>
 
     <!-- 3 ICONS -->
 
