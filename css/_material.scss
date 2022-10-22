@@ -3,6 +3,24 @@
 $mq-breakpoint-desktop: 900px;
 $mq-breakpoint-mobile: 600px;
 
+// Divider
+
+.divider25px,
+.divider50px,
+.divider100px {
+  width: 100%;
+  _border: 1px dashed violet;
+}
+.divider25px {
+  height: 25px;
+}
+.divider50px {
+  height: 50px;
+}
+.divider100px {
+  height: 100px;
+}
+
 // Text
 
 .center {
