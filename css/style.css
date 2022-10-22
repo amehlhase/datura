@@ -92,6 +92,7 @@ a {
 }
 
 nav {
+  z-index: 10;
   font-weight: bold;
   text-transform: uppercase;
   color: #28212E;
