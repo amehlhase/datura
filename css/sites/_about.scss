@@ -1,0 +1,18 @@
+#about {
+
+    p {
+        margin: 20px;
+        text-align: justify;
+    }
+
+    // TODO: Abstand zum linken Bildrand bei mobiler Variante anpassen
+
+    img {
+        width: 450px;
+        border-radius: 8px;
+        margin: 0 20px;
+        object-fit: contain;
+    }
+
+
+}

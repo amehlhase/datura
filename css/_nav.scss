@@ -5,6 +5,12 @@ nav {
     color: $color-dark;
     text-decoration: none;
 
+    a {
+      &:hover {
+        color: $color-accent-dark;
+      }
+    }
+
       
       ul {
         list-style: none;
@@ -30,6 +36,7 @@ nav {
       li:hover,
       li:focus-within {
         cursor: pointer;
+        color: $color-accent-dark;
 
 
         .fa-caret-down {

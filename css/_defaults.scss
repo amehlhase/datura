@@ -12,6 +12,14 @@ body {
     height: 100%;
 }
 
+// Text
+
+h1 {
+    text-transform: uppercase;
+    font-size: 180%;
+    margin: 20px;
+}
+
 // Images
 
 img {
@@ -26,4 +34,8 @@ a {
     text-transform: uppercase;
     color: $color-dark;
     text-decoration: none;
+
+    &:hover {
+        color: $color-accent-dark;
+    }
 }
