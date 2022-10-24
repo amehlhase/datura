@@ -1489,7 +1489,15 @@ footer {
   width: 450px;
   border-radius: 8px;
   margin: 0 20px;
+  padding-bottom: 20px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media screen and (max-width: 600px) {
+  #about img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */

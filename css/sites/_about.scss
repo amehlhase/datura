@@ -5,13 +5,17 @@
         text-align: justify;
     }
 
-    // TODO: Abstand zum linken Bildrand bei mobiler Variante anpassen
-
     img {
         width: 450px;
         border-radius: 8px;
         margin: 0 20px;
+        padding-bottom: 20px;
         object-fit: contain;
+
+        @media screen and (max-width: $mq-breakpoint-mobile) {
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 
 
