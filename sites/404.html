@@ -10,13 +10,12 @@
 
     <title>Datura – Nature in your home</title>
 </head>
+
 <body>
 
     <!-- KOPF -->
 
-    <!-- #TODO: Seite stylen und dafür sorgen, dass sie bei jedem 404 Error auch angezeigt wird -->
-
-    <section>
+    <section id="header-stripe">
         <div><i class="fa fa-truck" aria-hidden="true"></i> Kostenlose Lieferung</div>
         <div><i class="fa fa-star" aria-hidden="true"></i> Top Bewertungen</div>
         <div><i class="fa fa-envira" aria-hidden="true"></i> Klimaneutral</div>
@@ -24,26 +23,50 @@
     </section>
 
 
-    <!-- LOGO & NAVIGATION  -->
+    <!-- STRIPE, LOGO & NAVIGATION  -->
 
-    <section>
+    <section id="header">
         <header>
-            <h1><a href="index.html"><i class="fa fa-pagelines" aria-hidden="true"></i> Datura</a></h1>
+            <a href="../index.html"><i class="fa fa-pagelines" aria-hidden="true"></i> Datura</a>
         </header>
 
-        <nav id="navigation">
-            <!-- #TODO: Navigation mit Unterpunkten anlegen bzw. fertigstellen - kann vom Index kopiert werden :) -->
+        <nav>
             <ul>
-                <li><a href="index.html">Start</a></li>
-                <li><a href="sites/about.html">Über diese Seite</a></li>
-            </ul>
+                <li><a href="../index.html">Start</a></li>
+                <li>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>
+                  <ul class="dropdown">
+                    <li><a href="#">Alle Pflanzen</a></li>
+                    <li><a href="#">Individuelles Angebot</a></li>
+                    <li><a href="#">Memory</a></li>
+                  </ul>
+                </li>
+                <li>Pflege <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>
+                    <ul class="dropdown">
+                      <li><a href="#">Unser Pflanzen 1x1</a></li>
+                      <li><a href="#">Düngen und Erde</a></li>
+                      <li><a href="#">Zubehör</a></li>
+                    </ul>
+                  </li>
+                <li>About <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>
+                    <ul class="dropdown">
+                      <li><a href="about.html">Über diese Seite</a></li>
+                      <li><a href="#">Kontakt</a></li>
+                      <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                  </li>
+              </ul>
         </nav>
+
+
     </section>
 
-    <div>
-        <img src="../images/404_rocknwool-r56oO1V5oms-unsplash.jpg" alt="Zimmer mit mehreren Pflanzen auf einem Tisch und Regal">
-        <h1>Ups …</h1>
-        <div>Es tut uns leid, aber die Seite, die du aufgerufen hast, existiert nicht oder befindet sich noch im Aufbau.</div>
+    <!-- CONTENT -->
+
+    <div id="error-404">
+        <img src="../images/404_rocknwool-r56oO1V5oms-unsplash.jpg" alt="Zimmer mit mehreren Pflanzen auf einem Tisch und Regal" class="float-l">
+        <h2>Ups …</h2>
+        <p>Es tut uns leid, aber die Seite, die du aufgerufen hast, existiert nicht oder befindet sich noch im Aufbau.</p>
     </div>
+
 </body>
 </html>
