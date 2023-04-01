@@ -1,0 +1,76 @@
+#memory {
+
+    text-align: center;
+      
+        [hidden] {
+          display: none;
+        }
+        
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+        
+        .memory__board {
+          max-width: 850px;
+          margin: auto;
+          display: grid;
+          grid-template-columns: repeat(5, 150px);
+          gap: 1rem;
+          justify-content: center;
+          transition: background-color 0.2s;
+        }
+        
+        .memory__board--inactive {
+          pointer-events: none;
+          background-color: rgba(71, 27, 27, 0.5);
+        }
+        
+        .plant {
+          width: 150px;
+          height: 150px;
+          background: linear-gradient(
+            180deg,
+            #000000 0%,
+            #70a790 50%,
+            #095c51 100%
+          );
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .plant:not(.plant--found) {
+          cursor: pointer;
+        }
+        
+        .plant__img {
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          opacity: 0;
+          transition: opacity 0.25s;
+        }
+        
+        .plant--visible .plant__img {
+          opacity: 1;
+        }
+        
+        button.new__game {
+          color: #FF00FF;
+          padding: 10px 10px 10px 10px;
+          margin: 0px;
+          border: 2px solid #000000;
+          background-color: #000FFF;
+          width: 210px;
+          font-size: 16px;
+        }
+        .counter {
+          font-size: 18px;
+        }
+        
+
+
+}
+

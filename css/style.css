@@ -1526,4 +1526,87 @@ footer {
   margin: 20px;
   text-align: justify;
 }
+
+#memory {
+  text-align: center;
+}
+
+#memory [hidden] {
+  display: none;
+}
+
+#memory *,
+#memory *::before,
+#memory *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#memory .memory__board {
+  max-width: 850px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (150px)[5];
+      grid-template-columns: repeat(5, 150px);
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+#memory .memory__board--inactive {
+  pointer-events: none;
+  background-color: rgba(71, 27, 27, 0.5);
+}
+
+#memory .plant {
+  width: 150px;
+  height: 150px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000), color-stop(50%, #70a790), to(#095c51));
+  background: linear-gradient(180deg, #000000 0%, #70a790 50%, #095c51 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#memory .plant:not(.plant--found) {
+  cursor: pointer;
+}
+
+#memory .plant__img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+#memory .plant--visible .plant__img {
+  opacity: 1;
+}
+
+#memory button.new__game {
+  color: #FF00FF;
+  padding: 10px 10px 10px 10px;
+  margin: 0px;
+  border: 2px solid #000000;
+  background-color: #000FFF;
+  width: 210px;
+  font-size: 16px;
+}
+
+#memory .counter {
+  font-size: 18px;
+}
 /*# sourceMappingURL=style.css.map */
