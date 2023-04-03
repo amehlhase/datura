@@ -196,7 +196,9 @@ function displayPlants(plants) {
 }
 
 function displayCounter(attemptsCount) {
-  document.querySelector(".counter").innerHTML = `Versuche: ${attemptsCount}`;
+  document.querySelector(
+    ".counter"
+  ).innerHTML = `Anzahl Versuche: ${attemptsCount}`;
 }
 
 function handleBoardClick(e) {

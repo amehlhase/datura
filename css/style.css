@@ -1527,46 +1527,54 @@ footer {
   text-align: justify;
 }
 
-#memory {
+#memory p {
+  margin: 20px;
+  text-align: justify;
+}
+
+#memory .memory {
   text-align: center;
 }
 
-#memory [hidden] {
+#memory .memory [hidden] {
   display: none;
 }
 
-#memory *,
-#memory *::before,
-#memory *::after {
+#memory .memory *,
+#memory .memory *::before,
+#memory .memory *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-#memory .memory__board {
-  max-width: 850px;
+#memory .memory .memory__board {
+  max-width: 1100px;
   margin: auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (150px)[5];
-      grid-template-columns: repeat(5, 150px);
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
+  padding: 20px;
+  border-radius: 20px;
 }
 
-#memory .memory__board--inactive {
+#memory .memory .memory__board--inactive {
   pointer-events: none;
-  background-color: rgba(71, 27, 27, 0.5);
+  background-color: #763C48;
+  border-radius: 20px;
 }
 
-#memory .plant {
+#memory .memory .plant {
   width: 150px;
   height: 150px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#000000), color-stop(50%, #70a790), to(#095c51));
-  background: linear-gradient(180deg, #000000 0%, #70a790 50%, #095c51 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#232f2c), color-stop(50%, #75A095), to(#095c51));
+  background: linear-gradient(180deg, #232f2c 0%, #75A095 50%, #095c51 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1576,13 +1584,14 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 15px;
 }
 
-#memory .plant:not(.plant--found) {
+#memory .memory .plant:not(.plant--found) {
   cursor: pointer;
 }
 
-#memory .plant__img {
+#memory .memory .plant__img {
   width: 150px;
   height: 150px;
   -o-object-fit: cover;
@@ -1590,23 +1599,28 @@ footer {
   opacity: 0;
   -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s;
+  border-radius: 15px;
 }
 
-#memory .plant--visible .plant__img {
+#memory .memory .plant--visible .plant__img {
   opacity: 1;
 }
 
-#memory button.new__game {
-  color: #FF00FF;
+#memory .memory button.new__game {
+  color: #763C48;
   padding: 10px 10px 10px 10px;
   margin: 0px;
-  border: 2px solid #000000;
-  background-color: #000FFF;
+  border: 2px solid #763C48;
+  border-radius: 5px;
+  background-color: #F2F2F3;
   width: 210px;
   font-size: 16px;
+  font-weight: bold;
 }
 
-#memory .counter {
+#memory .memory .counter {
+  text-align: center;
   font-size: 18px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
