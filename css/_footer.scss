@@ -1,5 +1,19 @@
 footer {
-    width: 60%;
+    text-align: center;
+    min-width: 300px;
+    width: 70%;
     margin: 0 auto;
     padding: 75px 0;
+
+
+    .social {
+        a {
+            font-size: 35px;
+            margin: 10px;
+        }
+    }
+
+    .copyright {
+        opacity: 40%;
+    }
 }
