@@ -25,7 +25,7 @@ nav {
         position: relative;
         text-decoration: none;
         transition-duration: 0.5s;
-        min-width: 110px;
+        min-width: 90px;
 
         .fa-caret-right {
           display: none;
@@ -40,7 +40,7 @@ nav {
 
 
         .fa-caret-down {
-          display:none; 
+          display: none;
         }
 
         .fa-caret-right {
@@ -71,6 +71,7 @@ nav {
          visibility: visible;
          opacity: 1;
          display: block;
+         z-index: 15;
       }
       
       ul li ul li {

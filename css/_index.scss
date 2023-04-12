@@ -227,6 +227,10 @@ input[type=radio]{
         justify-content: space-between;
         align-content: center;
         align-items: center;
+
+        p {
+          margin: 10px;
+        }
     }
 
     img {

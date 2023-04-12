@@ -92,7 +92,7 @@ a:hover {
      object-fit: contain;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   #error-404 img {
     width: 100%;
     margin: 0 auto;
@@ -118,6 +118,11 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #header header {
@@ -126,8 +131,8 @@ a:hover {
   font-family: 'Special Elite', cursive;
   padding: 15px;
   text-shadow: 5px 5px 10px #75A095;
-  min-width: 25%;
   text-transform: uppercase;
+  min-width: 175px;
 }
 
 nav {
@@ -156,7 +161,7 @@ nav li {
   text-decoration: none;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
-  min-width: 110px;
+  min-width: 90px;
 }
 
 nav li .fa-caret-right {
@@ -202,6 +207,7 @@ nav ul li ul:focus {
   visibility: visible;
   opacity: 1;
   display: block;
+  z-index: 15;
 }
 
 nav ul li ul li {
@@ -1309,7 +1315,7 @@ footer .copyright {
           justify-content: center;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 400px) {
   .cards {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -1359,6 +1365,10 @@ footer .copyright {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#bildraster-3 .bildraster-3 p {
+  margin: 10px;
 }
 
 #bildraster-3 img {
@@ -1526,7 +1536,7 @@ footer .copyright {
      object-fit: contain;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   #about img {
     width: 100%;
     margin: 0 auto;

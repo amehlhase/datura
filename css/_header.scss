@@ -13,6 +13,8 @@
 
 #header {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
     header {
         font-size: 30px;
@@ -20,8 +22,8 @@
         font-family: 'Special Elite', cursive;
         padding: 15px;
         text-shadow: 5px 5px 10px $color-green;
-        min-width: 25%;
         text-transform: uppercase;
+        min-width: 175px;
     }
 
 }
