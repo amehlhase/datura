@@ -3,11 +3,22 @@
     display: flex;
     background-color: $color-green;
     text-align: center;
+    word-break: keep-all;
+
+    @media screen and (max-width: $mq-breakpoint-mobile) {
+        .mobilehidden {
+            display: none;
+    }     
+}
 
     div {
         width: 25%;
         margin: 2px;
         padding: 2px;
+
+        @media screen and (max-width: $mq-breakpoint-mobile) {
+            width: 50%;
+            }
     }
 }
 

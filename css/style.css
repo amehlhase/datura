@@ -106,12 +106,25 @@ a:hover {
   display: flex;
   background-color: #75A095;
   text-align: center;
+  word-break: keep-all;
+}
+
+@media screen and (max-width: 400px) {
+  #header-stripe .mobilehidden {
+    display: none;
+  }
 }
 
 #header-stripe div {
   width: 25%;
   margin: 2px;
   padding: 2px;
+}
+
+@media screen and (max-width: 400px) {
+  #header-stripe div {
+    width: 50%;
+  }
 }
 
 #header {
