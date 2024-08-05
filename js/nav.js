@@ -1,7 +1,7 @@
 document.writeln(
   ` <ul>
-<li><a href="index.html">Start</a></li>
-<li>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>
+<li><a href="../index.html">Start</a></li>
+<li>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>  
   <ul class="dropdown">
     <li><a href="#">Alle Pflanzen</a></li>
     <li><a href="#">Individuelles Angebot</a></li>

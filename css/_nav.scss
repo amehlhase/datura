@@ -16,6 +16,7 @@ nav {
         list-style: none;
         margin: 0;
         padding-left: 0;
+
       }
       
       li {
@@ -51,6 +52,11 @@ nav {
       
       li:focus-within a {
         outline: none;
+      }
+
+      ul li:last-child {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
       }
       
       ul li ul {

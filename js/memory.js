@@ -25,6 +25,12 @@ function effectObserverCallback(entries, observer) {
   }
 }
 
+function delay(milliseconds) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, milliseconds);
+  });
+}
+
 let attempts = 0;
 
 function initMemory() {
@@ -252,12 +258,13 @@ function hidePlants(plants, board) {
   board.classList.remove("memory__board--inactive");
 }
 
-function checkGameEnd() {
+async function checkGameEnd() {
   const unfinishedPlants = document.querySelectorAll(
     ".plant:not(.plant--found)"
   );
 
   if (unfinishedPlants.length === 0) {
+    await delay(800);
     alert("Spiel gewonnen!");
     return true;
   } else {
