@@ -84,10 +84,10 @@ function getShuffledPlants() {
       id: 3,
     },
     {
-      name: "Calathea Insignis",
+      name: "Calathea Lancifolia",
       img: {
-        src: "/images/plant_types/calathea-insignis.jpg",
-        alt: "Calathea Insignis",
+        src: "/images/plant_types/calathea-lancifolia.jpg",
+        alt: "Calathea Lancifolia",
       },
       id: 4,
     },
@@ -164,10 +164,10 @@ function getShuffledPlants() {
       id: 13,
     },
     {
-      name: "Sukkulente",
+      name: "Echeverie",
       img: {
-        src: "/images/plant_types/sukkulente.jpg",
-        alt: "Sukkulente",
+        src: "/images/plant_types/echeverie.jpg",
+        alt: "Echeverie",
       },
       id: 14,
     },
