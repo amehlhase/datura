@@ -38,24 +38,3 @@ a {
         color: $color-accent-dark;
     }
 }
-
-
-// 404 Seite
-
-#error-404 {
-    margin: 20px;
-    text-align: center;
-
-    img {
-        width: 450px;
-        border-radius: 8px;
-        margin: 0 20px;
-        _padding-bottom: 20px;
-        object-fit: contain;
-
-        @media screen and (max-width: $mq-breakpoint-mobile) {
-            width: 100%;
-            margin: 0 auto;
-        }
-    }
-}

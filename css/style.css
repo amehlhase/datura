@@ -4,7 +4,6 @@
 .divider50px,
 .divider100px {
   width: 100%;
-  _border: 1px dashed violet;
 }
 
 .divider25px {
@@ -75,25 +74,6 @@ a {
 }
 a:hover {
   color: #763C48;
-}
-
-#error-404 {
-  margin: 20px;
-  text-align: center;
-}
-#error-404 img {
-  width: 450px;
-  border-radius: 8px;
-  margin: 0 20px;
-  _padding-bottom: 20px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-@media screen and (max-width: 400px) {
-  #error-404 img {
-    width: 100%;
-    margin: 0 auto;
-  }
 }
 
 #header-stripe {
@@ -1168,4 +1148,38 @@ footer .copyright {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+}
+
+#error-404 {
+  margin: 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+@media screen and (max-width: 900px) and (min-width: 400px) {
+  #error-404 img {
+    min-width: 350px;
+    max-width: 450px;
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #error-404 img {
+    min-width: 200px;
+    max-width: 380px;
+  }
+}
+#error-404 #text-404 {
+  min-width: 300px;
+}
+@media screen and (min-width: 400px) {
+  #error-404 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+#error-404 img {
+  border-radius: 8px;
+  max-width: 500px;
+  margin-right: 20px;
 }/*# sourceMappingURL=style.css.map */
