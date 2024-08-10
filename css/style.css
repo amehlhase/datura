@@ -1098,11 +1098,21 @@ footer .copyright {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
+  gap: 0.8rem;
   justify-content: center;
   transition: background-color 0.2s;
-  padding: 20px;
+  padding: 20px 0;
   border-radius: 20px;
+}
+@media screen and (max-width: 400px) {
+  #memory .memory .memory__board {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 90px));
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 400px) {
+  #memory .memory .memory__board {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+  }
 }
 #memory .memory .memory__board--inactive {
   pointer-events: none;
@@ -1118,6 +1128,18 @@ footer .copyright {
   align-items: center;
   border-radius: 15px;
 }
+@media screen and (max-width: 400px) {
+  #memory .memory .plant {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 400px) {
+  #memory .memory .plant {
+    width: 120px;
+    height: 120px;
+  }
+}
 #memory .memory .plant:not(.plant--found) {
   cursor: pointer;
 }
@@ -1129,6 +1151,18 @@ footer .copyright {
   opacity: 0;
   transition: opacity 0.25s;
   border-radius: 15px;
+}
+@media screen and (max-width: 400px) {
+  #memory .memory .plant__img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 400px) {
+  #memory .memory .plant__img {
+    width: 120px;
+    height: 120px;
+  }
 }
 #memory .memory .plant--visible .plant__img {
   opacity: 1;
