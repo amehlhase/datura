@@ -11,13 +11,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: space-between;
+    align-content: center;
   }
-
 
   .multiple-choice {
     padding: 10px;
     width: 200px;
+    line-height: 1.9rem;
+
   }
 
   .checkbox {
