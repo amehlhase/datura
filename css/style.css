@@ -83,7 +83,7 @@ a:hover {
   text-align: center;
   word-break: keep-all;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   #header-stripe .mobilehidden {
     display: none;
   }
@@ -93,7 +93,7 @@ a:hover {
   margin: 2px;
   padding: 2px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   #header-stripe div {
     width: 50%;
   }
@@ -878,7 +878,7 @@ footer .copyright {
   flex-wrap: wrap;
   justify-content: center;
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 360px) {
   .cards {
     flex-wrap: nowrap;
   }
@@ -1059,14 +1059,14 @@ footer .copyright {
   text-align: center;
   vertical-align: middle;
 }
-@media screen and (max-width: 900px) and (min-width: 400px) {
+@media screen and (max-width: 960px) and (min-width: 360px) {
   #error-404 img {
     min-width: 350px;
     max-width: 450px;
     margin-right: 20px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   #error-404 img {
     min-width: 200px;
     max-width: 380px;
@@ -1075,7 +1075,7 @@ footer .copyright {
 #error-404 #text-404 {
   min-width: 300px;
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 360px) {
   #error-404 {
     display: flex;
     justify-content: center;
@@ -1100,7 +1100,7 @@ footer .copyright {
   -o-object-fit: contain;
      object-fit: contain;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   #about img {
     width: 100%;
     margin: 0 auto;
@@ -1138,12 +1138,12 @@ footer .copyright {
   padding: 20px 0;
   border-radius: 20px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   #memory .memory .memory__board {
     grid-template-columns: repeat(auto-fill, minmax(90px, 90px));
   }
 }
-@media screen and (max-width: 900px) and (min-width: 400px) {
+@media screen and (max-width: 960px) and (min-width: 360px) {
   #memory .memory .memory__board {
     grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
   }
@@ -1162,13 +1162,13 @@ footer .copyright {
   align-items: center;
   border-radius: 15px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   #memory .memory .plant {
     width: 100px;
     height: 100px;
   }
 }
-@media screen and (max-width: 900px) and (min-width: 400px) {
+@media screen and (max-width: 960px) and (min-width: 360px) {
   #memory .memory .plant {
     width: 120px;
     height: 120px;
@@ -1186,13 +1186,13 @@ footer .copyright {
   transition: opacity 0.25s;
   border-radius: 15px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   #memory .memory .plant__img {
     width: 100px;
     height: 100px;
   }
 }
-@media screen and (max-width: 900px) and (min-width: 400px) {
+@media screen and (max-width: 960px) and (min-width: 360px) {
   #memory .memory .plant__img {
     width: 120px;
     height: 120px;
@@ -1218,6 +1218,58 @@ footer .copyright {
   font-weight: bold;
 }
 
+/* FILTER STYLING */
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #F2F2F3;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #75A095;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* --------------------------------------------*/
+/* CARDS STYLING */
 article {
   --img-scale: 1.001;
   --link-icon-translate: -20px;
@@ -1239,7 +1291,7 @@ article a::after {
   content: "";
 }
 
-/* basic article elements styling */
+/* basic card elements styling */
 article h2 {
   margin: 0 0 18px 0;
   font-size: 1.9rem;
@@ -1296,20 +1348,13 @@ article:has(:hover, :focus) {
 }
 
 /************************ 
-Generic layout (demo looks)
-**************************/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+Generic layout (demo looks)*/
 .articles {
   display: grid;
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 24px;
   font-size: 1.2rem;
   line-height: 1.6rem;
@@ -1323,7 +1368,7 @@ Generic layout (demo looks)
     display: none;
   }
 }
-@container card (min-width: 380px) {
+@container card (min-width: 360px) {
   .article-wrapper {
     display: grid;
     grid-template-columns: 100px 1fr;
