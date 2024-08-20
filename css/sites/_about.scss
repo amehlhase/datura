@@ -1,21 +1,26 @@
 #about {
 
     p {
-        margin: 20px;
+        margin: 15px;
+        padding: 10px;
         text-align: justify;
     }
 
     img {
-        width: 450px;
-        border-radius: 8px;
-        margin: 0 20px;
-        margin-bottom: 20px;
-        object-fit: contain;
+        max-width: 500px;
+        min-width: 280px;
+        border-radius: 20px;
+        padding: 15px;
 
-        @media screen and (max-width: $mq-breakpoint-mobile) {
-            width: 100%;
+        @media screen and (min-width: 680px) {
+            float: right;
+        }
+
+        @media screen and (max-width: 679px) {
+            width: 90%;
             margin: 0 auto;
         }
+
     }
 }
 
