@@ -1,7 +1,7 @@
 // HERO SLIDER
 
 #hero {
-    $slider-movement-duration: 500ms;
+$slider-movement-duration: 500ms;
 $step-wait: 250ms;
 $slide-animation-duration: 500ms;
 $animation-total-duration: $slider-movement-duration + $step-wait + $slide-animation-duration;
@@ -19,10 +19,10 @@ $animation-total-duration: $slider-movement-duration + $step-wait + $slide-anima
     .css-slider-navigation-item{
       cursor:pointer;
       position: relative;
-      width: 15px;
-      height: 15px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
-      border: 3px solid $color-green;
+      border: 5px solid $color-green;
       margin: 10px;
       text-shadow: 20px 20px $color-light;
       background: $color-green;
@@ -128,10 +128,14 @@ $animation-total-duration: $slider-movement-duration + $step-wait + $slide-anima
 }
 
 .slide-title{
-  font-size: 42px;
+  font-size: 2.125rem;
   font-weight: 100;
   text-transform: uppercase;
   font-weight: bold;
+
+  @media screen and (max-width: $mq-breakpoint-mobile) {
+    font-size: 1.25rem;
+  }
 }
 .slide-subtitle{
   font-size: 24px;
@@ -161,7 +165,7 @@ input[type=radio]{
 }
 
 
-// TODO: CARDS (evtl zu Material verschieben)
+/* CARDS */
 
 .cards {
     display: flex;
@@ -181,7 +185,7 @@ input[type=radio]{
     }
 }
 
-// 3ER ICON RASTER
+/* 3ER ICON RASTER */
 
 #icons-3 {
     i {

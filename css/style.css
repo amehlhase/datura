@@ -74,21 +74,21 @@ a:hover {
   display: flex;
   background-color: #75A095;
   text-align: center;
-  word-break: keep-all;
+  font-size: 1rem;
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   #header-stripe .mobilehidden {
     display: none;
   }
 }
 #header-stripe div {
-  width: 25%;
+  width: 33%;
   margin: 2px;
   padding: 2px;
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   #header-stripe div {
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -209,10 +209,10 @@ footer .copyright {
 #hero .css-slider .css-slider-navigation .css-slider-navigation-item {
   cursor: pointer;
   position: relative;
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-  border: 3px solid #75A095;
+  border: 5px solid #75A095;
   margin: 10px;
   text-shadow: 20px 20px #F2F2F3;
   background: #75A095;
@@ -834,10 +834,15 @@ footer .copyright {
   transition-duration: -300ms;
 }
 #hero .slide-title {
-  font-size: 42px;
+  font-size: 2.125rem;
   font-weight: 100;
   text-transform: uppercase;
   font-weight: bold;
+}
+@media screen and (max-width: 320px) {
+  #hero .slide-title {
+    font-size: 1.25rem;
+  }
 }
 #hero .slide-subtitle {
   font-size: 24px;
@@ -863,6 +868,7 @@ footer .copyright {
   }
 }
 
+/* CARDS */
 .cards {
   display: flex;
   align-items: flex-start;
@@ -871,7 +877,7 @@ footer .copyright {
   flex-wrap: wrap;
   justify-content: center;
 }
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 320px) {
   .cards {
     flex-wrap: nowrap;
   }
@@ -881,6 +887,7 @@ footer .copyright {
   min-height: 200px;
 }
 
+/* 3ER ICON RASTER */
 #icons-3 i {
   font-size: 350%;
   color: #75A095;
@@ -1052,14 +1059,14 @@ footer .copyright {
   text-align: center;
   vertical-align: middle;
 }
-@media screen and (max-width: 960px) and (min-width: 360px) {
+@media screen and (max-width: 800px) and (min-width: 320px) {
   #error-404 img {
     min-width: 350px;
     max-width: 450px;
     margin-right: 20px;
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   #error-404 img {
     min-width: 200px;
     max-width: 380px;
@@ -1068,7 +1075,7 @@ footer .copyright {
 #error-404 #text-404 {
   min-width: 300px;
 }
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 320px) {
   #error-404 {
     display: flex;
     justify-content: center;
@@ -1135,12 +1142,12 @@ footer .copyright {
   padding: 20px 0;
   border-radius: 20px;
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   #memory .memory .memory__board {
     grid-template-columns: repeat(auto-fill, minmax(90px, 90px));
   }
 }
-@media screen and (max-width: 960px) and (min-width: 360px) {
+@media screen and (max-width: 800px) and (min-width: 320px) {
   #memory .memory .memory__board {
     grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
   }
@@ -1159,13 +1166,13 @@ footer .copyright {
   align-items: center;
   border-radius: 15px;
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   #memory .memory .plant {
     width: 100px;
     height: 100px;
   }
 }
-@media screen and (max-width: 960px) and (min-width: 360px) {
+@media screen and (max-width: 800px) and (min-width: 320px) {
   #memory .memory .plant {
     width: 120px;
     height: 120px;
@@ -1183,13 +1190,13 @@ footer .copyright {
   transition: opacity 0.25s;
   border-radius: 15px;
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   #memory .memory .plant__img {
     width: 100px;
     height: 100px;
   }
 }
-@media screen and (max-width: 960px) and (min-width: 360px) {
+@media screen and (max-width: 800px) and (min-width: 320px) {
   #memory .memory .plant__img {
     width: 120px;
     height: 120px;
@@ -1374,7 +1381,7 @@ Generic layout (demo looks)*/
   line-height: 1.6rem;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 800px) {
   article {
     container: card/inline-size;
   }
