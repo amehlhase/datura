@@ -69,6 +69,21 @@ a:hover {
   color: #763C48;
 }
 
+#header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#header header {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Special Elite", cursive;
+  padding: 15px;
+  text-shadow: 5px 5px 10px #75A095;
+  text-transform: uppercase;
+  min-width: 175px;
+}
+
 #header-stripe {
   width: 100%;
   display: flex;
@@ -90,21 +105,6 @@ a:hover {
   #header-stripe div {
     width: 100%;
   }
-}
-
-#header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-#header header {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Special Elite", cursive;
-  padding: 15px;
-  text-shadow: 5px 5px 10px #75A095;
-  text-transform: uppercase;
-  min-width: 175px;
 }
 
 nav {
@@ -877,11 +877,6 @@ footer .copyright {
   flex-wrap: wrap;
   justify-content: center;
 }
-@media screen and (min-width: 320px) {
-  .cards {
-    flex-wrap: nowrap;
-  }
-}
 .cards .card {
   padding: 10px;
   min-height: 200px;
@@ -932,6 +927,7 @@ footer .copyright {
   border-radius: 5px;
   margin: 10px;
   min-width: 25%;
+  max-width: 450px;
 }
 #ratings .rating {
   color: #AD7246;
@@ -1033,7 +1029,7 @@ footer .copyright {
 }
 #newsletter #newsletter-teaser .text {
   position: absolute;
-  padding: 0 50px 0 50px;
+  padding: 0 30px;
   top: 15%;
   left: 0px;
   right: 0px;

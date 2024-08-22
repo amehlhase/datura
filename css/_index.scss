@@ -175,10 +175,6 @@ input[type=radio]{
     flex-wrap: wrap;
     justify-content: center;
 
-    @media screen and (min-width: $mq-breakpoint-mobile) {
-        flex-wrap: nowrap;
-      }
-
     .card {
         padding: 10px;
         min-height: 200px;
@@ -254,6 +250,7 @@ input[type=radio]{
         border-radius: 5px;
         margin: 10px;
         min-width: 25%;
+        max-width: 450px;
     }
 
     .rating {
@@ -381,7 +378,7 @@ input[type=radio]{
 
         .text {
             position: absolute;
-            padding: 0 50px 0 50px;
+            padding: 0 30px;
             top: 15%;
             left: 0px;
             right: 0px;
