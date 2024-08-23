@@ -1,21 +1,37 @@
-async function loadJson() {
-  const data = await (await fetch("../files/pflanzen.json")).json();
-  console.log(data);
+async function getPlants() {
+  try {
+    const response = await fetch("../files/pflanzen.json", {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-loadJson();
-
-function loadPlants() {
-  document.writeln(
-    `<article>
+getPlants().then((data) => {
+  const target = document.getElementById("plantcards");
+  data.forEach((data) => {
+    target.insertAdjacentHTML(
+      "afterbegin",
+      `<article>
         <div class="article-wrapper">
           <figure>
-            <img src="../images/plant_types/alocasia.jpg" alt="${Test}" />
+            <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
           </figure>
           <div class="article-body">
-            <h2>Alocasia</h2>
+            <h2>${data.Name}</h2>
+            <h3>${data.NameLatin}</h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam aut ullam sit veritatis deserunt, sequi culpa, in consequuntur aliquid, tempora tenetur quis qui et beatae nam est quas dolorum? 
+               Wasserbedarf:<br/>
+               Schwierigkeitsgrad:<br/>
             </p>
             <a href="#" class="read-more">
               Read more <span class="sr-only">about this is some title</span>
@@ -26,7 +42,6 @@ function loadPlants() {
           </div>
         </div>
       </article>`
-  );
-}
-
-loadPlants();
+    );
+  });
+});
