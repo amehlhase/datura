@@ -1310,11 +1310,15 @@ article a::after {
 
 /* basic card elements styling */
 article h2 {
-  margin: 0 0 18px 0;
+  margin: 0 0 14px 0;
   font-size: 1.9rem;
   letter-spacing: 0.06em;
   color: #28212E;
   transition: color 0.3s ease-out;
+}
+article h3 {
+  font-weight: normal;
+  font-style: italic;
 }
 
 figure {

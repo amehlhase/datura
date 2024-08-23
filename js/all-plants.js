@@ -30,10 +30,10 @@ getPlants().then((data) => {
             <h2>${data.Name}</h2>
             <h3>${data.NameLatin}</h3>
             <p>
-               Standort:<br/>
-               Wasserbedarf:<br/>
-               Schwierigkeitsgrad:<br/>
-               Giftig:<br/>
+               Standort: ${getPlantLight(data.Light)}<br/>
+               Wasserbedarf: ${getPlantWater(data.WaterDemand)}<br/>
+               Schwierigkeitsgrad: ${getPlantMaintenance(data.Maintenance)}<br/>
+               Giftig: ${getPlantToxic(data.Toxic)}<br/>
             </p>
             <a href="#" class="read-more">
               Read more <span class="sr-only">about this is some title</span>
@@ -47,3 +47,47 @@ getPlants().then((data) => {
     );
   });
 });
+
+/* Hilfsfunktionen */
+
+function getPlantLight(plantLight) {
+  switch (plantLight) {
+    case 0:
+      return `halbschattig`;
+    case 1:
+      return `hell`;
+    case 2:
+      return `sonnig`;
+  }
+}
+
+function getPlantWater(plantWater) {
+  switch (plantWater) {
+    case 0:
+      return `wenig`;
+    case 1:
+      return `mittel`;
+    case 2:
+      return `viel`;
+  }
+}
+
+function getPlantMaintenance(plantMaintenance) {
+  switch (plantMaintenance) {
+    case 0:
+      return `Ich bin eher anspruchslos`;
+    case 1:
+      return `Ich bin eine recht umgängliche Zeitgenossin`;
+    case 2:
+      return `Ich brauche viel Aufmerksamkeit und gute Pflege`;
+  }
+}
+
+function getPlantToxic(plantToxic) {
+  switch (plantToxic) {
+    case true:
+      return "Ja";
+    case false:
+      return "Nein";
+  }
+}

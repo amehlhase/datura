@@ -84,9 +84,6 @@
 
 }
   
-
-
-
 /* --------------------------------------------*/
 
 /* CARDS STYLING */ 
@@ -102,6 +99,9 @@ article {
     transform-origin: center;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
+
+    
+
   }
   
   article a::after {
@@ -113,12 +113,20 @@ article {
   }
   
   /* basic card elements styling */
-  article h2 {
-    margin: 0 0 18px 0;
-    font-size: 1.9rem;
-    letter-spacing: 0.06em;
-    color: $color-dark;
-    transition: color 0.3s ease-out;
+  article {
+
+    h2 {
+      margin: 0 0 14px 0;
+      font-size: 1.9rem;
+      letter-spacing: 0.06em;
+      color: $color-dark;
+      transition: color 0.3s ease-out;  
+    } 
+
+    h3 {
+    font-weight: normal;
+    font-style: italic;
+    }
   }
   
   figure {
