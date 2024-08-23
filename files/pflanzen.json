@@ -1,5 +1,4 @@
-{
-"plants":[
+[
  {
   "ID": 1001,
   "Name": "Elefantenohr",
@@ -226,4 +225,3 @@
   "Stock": 19
  }
 ]
-}
