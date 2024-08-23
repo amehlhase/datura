@@ -30,8 +30,10 @@ getPlants().then((data) => {
             <h2>${data.Name}</h2>
             <h3>${data.NameLatin}</h3>
             <p>
+               Standort:<br/>
                Wasserbedarf:<br/>
                Schwierigkeitsgrad:<br/>
+               Giftig:<br/>
             </p>
             <a href="#" class="read-more">
               Read more <span class="sr-only">about this is some title</span>
