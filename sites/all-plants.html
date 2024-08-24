@@ -32,9 +32,6 @@
           <script language="javascript" type="text/javascript"  src="../js/nav.js"></script>
         </nav>
 
-
-       
-
     </section>
 
     <!-- CONTENT -->
@@ -52,15 +49,16 @@
         <div class="multiple-choice">
         <span><b>Standort:</b><br/></span>
         <label for="halbschattig">
-          <input type="checkbox" id="halbschattig">
+          <input type="checkbox" name="checkstandort" for="halbschattig" value ="0" id="halbschattig">
           halbschattig
         </label><br/>
         <label for="hell">
-          <input type="checkbox" id="hell">
+          <input type="checkbox" name="checkstandort" for="hell" value ="1" id="hell">
           hell
         </label><br />
         <label for="sonnig">
-          <input type="checkbox" id="sonnig">
+          <input type="checkbox" 
+          name="checkstandort" for="sonnig" value ="2" id="sonnig">
           sonnig
         </label>
       </div>
@@ -69,24 +67,24 @@
       <div class="multiple-choice">
         <span><b>Wasserbedarf:</b><br/></span>
         <label for="wenigwasser">
-          <input type="checkbox" id="wenigwasser">
+          <input type="checkbox" name="checkwasserbedarf" for="wenigwasser" value ="0" id="wenigwasser">
           wenig
         </label><br/>
         <label for="mittelwasser">
-          <input type="checkbox" id="mittelwasser">
+          <input type="checkbox" name="checkwasserbedarf" for="mittelwasser" value ="1" id="mittelwasser">
           mittel
         </label><br />
         <label for="vielwasser">
-          <input type="checkbox" id="vielwasser">
-          viel
+          <input type="checkbox" name="checkwasserbedarf" for="vielwasser" value ="2" id="vielwasser">
+          hoch
         </label>
       </div>
 
 
       <div class="single-choice">
       <div class="checkbox">
-        <label class="switch" for="check-toxic">
-          <input type="checkbox" id="check-toxic" />
+        <label class="switch" for="checktoxic">
+          <input type="checkbox" name="checktoxic" id="checktoxic" />
           <div class="slider round"></div> 
         </label>
         <span>Nur ungiftige</span>
@@ -94,7 +92,7 @@
 
       <div class="checkbox">
         <label class="switch" for="check-availability">
-          <input type="checkbox" id="check-availability" />
+          <input type="checkbox" name="checkavailability" id="check-availability" />
           <div class="slider round"></div> 
         </label>
         <span>Aktuell lieferbar</span>

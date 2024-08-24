@@ -1,3 +1,12 @@
+let dataArr = [];
+const plantcards = document.getElementById("plantcards");
+
+let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+var plantcard = Array.from(document.querySelectorAll(".plantcard"));
+let checked = {};
+
+/* read JSON file */
+
 async function getPlants() {
   try {
     const response = await fetch("../files/pflanzen.json", {
@@ -8,7 +17,13 @@ async function getPlants() {
       throw new Error(`Error! status: ${response.status}`);
     }
 
-    const data = await response.json();
+    let data = await response.json();
+
+    for (const key in data) {
+      {
+        dataArr.push(data[key]);
+      }
+    }
 
     return data;
   } catch (error) {
@@ -16,12 +31,13 @@ async function getPlants() {
   }
 }
 
+/* Load plants */
+
 getPlants().then((data) => {
-  const target = document.getElementById("plantcards");
   data.forEach((data) => {
-    target.insertAdjacentHTML(
+    plantcards.insertAdjacentHTML(
       "afterbegin",
-      `<article>
+      `<article class="plantcard">
         <div class="article-wrapper">
           <figure>
             <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
@@ -48,7 +64,42 @@ getPlants().then((data) => {
   });
 });
 
-/* Hilfsfunktionen */
+/* Filter functions */
+
+Array.prototype.forEach.call(allCheckboxes, function (el) {
+  el.addEventListener("change", toggleCheckbox);
+});
+
+function toggleCheckbox(e) {
+  getChecked(e.target.name);
+}
+
+function getChecked(name) {
+  checked[name] = Array.from(
+    document.querySelectorAll("input[name=" + name + "]:checked")
+  ).map(function (el) {
+    return el.value;
+  });
+}
+
+function filterWaterdemand() {
+  return dataArr.filter(({ WaterDemand }) => WaterDemand === 0);
+}
+
+// function setVisibility() {
+//   plantcard.map(function (el) {
+//     let checkstandort = checked.checkstandort.length
+//       ? _.intersection(Array.from(el.classList), checked.checkstandort).length
+//       : true;
+//     if (checkstandort) {
+//       el.style.display = "block";
+//     } else {
+//       el.style.display = "none";
+//     }
+//   });
+// }
+
+/* Helper functions */
 
 function getPlantLight(plantLight) {
   switch (plantLight) {
@@ -77,7 +128,7 @@ function getPlantMaintenance(plantMaintenance) {
     case 0:
       return `Ich bin eher anspruchslos`;
     case 1:
-      return `Ich bin eine recht umgängliche Zeitgenossin`;
+      return `Ich bin eine umgängliche Zeitgenossin`;
     case 2:
       return `Ich brauche viel Aufmerksamkeit und gute Pflege`;
   }
