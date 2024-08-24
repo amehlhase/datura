@@ -1,11 +1,9 @@
-let dataArr = [];
+let plantsArr = [];
 const plantcards = document.getElementById("plantcards");
 
 let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-var plantcard = Array.from(document.querySelectorAll(".plantcard"));
+let plantcard = Array.from(document.querySelectorAll(".plantcard"));
 let checked = {};
-
-/* read JSON file */
 
 async function getPlants() {
   try {
@@ -21,7 +19,7 @@ async function getPlants() {
 
     for (const key in data) {
       {
-        dataArr.push(data[key]);
+        plantsArr.push(data[key]);
       }
     }
 
@@ -66,12 +64,15 @@ getPlants().then((data) => {
 
 /* Filter functions */
 
+getChecked("checklight");
+
 Array.prototype.forEach.call(allCheckboxes, function (el) {
   el.addEventListener("change", toggleCheckbox);
 });
 
 function toggleCheckbox(e) {
   getChecked(e.target.name);
+  setVisibility();
 }
 
 function getChecked(name) {
@@ -82,22 +83,21 @@ function getChecked(name) {
   });
 }
 
-function filterWaterdemand() {
-  return dataArr.filter(({ WaterDemand }) => WaterDemand === 0);
-}
+function setVisibility() {
+  plantcard.map(function (el) {
+    let checklight = checked.checklight.length
+      ? _.intersection(Array.from(el.classList), checked.checklight).length
+      : true;
 
-// function setVisibility() {
-//   plantcard.map(function (el) {
-//     let checkstandort = checked.checkstandort.length
-//       ? _.intersection(Array.from(el.classList), checked.checkstandort).length
-//       : true;
-//     if (checkstandort) {
-//       el.style.display = "block";
-//     } else {
-//       el.style.display = "none";
-//     }
-//   });
-// }
+    if (checklight) {
+      el.style.display = "block";
+      console.log("block");
+    } else {
+      el.style.display = "none";
+      console.log("none");
+    }
+  });
+}
 
 /* Helper functions */
 
