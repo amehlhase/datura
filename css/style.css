@@ -91,7 +91,7 @@ a:hover {
   text-align: center;
   font-size: 1rem;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   #header-stripe .mobilehidden {
     display: none;
   }
@@ -101,7 +101,7 @@ a:hover {
   margin: 2px;
   padding: 2px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   #header-stripe div {
     width: 100%;
   }
@@ -839,7 +839,7 @@ footer .copyright {
   text-transform: uppercase;
   font-weight: bold;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   #hero .slide-title {
     font-size: 1.25rem;
   }
@@ -930,7 +930,7 @@ footer .copyright {
   max-width: 450px;
 }
 #ratings .rating {
-  color: #AD7246;
+  color: #D4936A;
 }
 #ratings h4 {
   margin: 0;
@@ -1048,6 +1048,7 @@ footer .copyright {
   background-color: #F2F2F3;
   min-width: 200px;
   height: 40px;
+  font-family: "Quicksand", sans-serif;
 }
 
 #error-404 {
@@ -1055,14 +1056,14 @@ footer .copyright {
   text-align: center;
   vertical-align: middle;
 }
-@media screen and (max-width: 800px) and (min-width: 320px) {
+@media screen and (max-width: 800px) and (min-width: 420px) {
   #error-404 img {
     min-width: 350px;
     max-width: 450px;
     margin-right: 20px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   #error-404 img {
     min-width: 200px;
     max-width: 380px;
@@ -1071,7 +1072,7 @@ footer .copyright {
 #error-404 #text-404 {
   min-width: 300px;
 }
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 420px) {
   #error-404 {
     display: flex;
     justify-content: center;
@@ -1138,12 +1139,12 @@ footer .copyright {
   padding: 20px 0;
   border-radius: 20px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   #memory .memory .memory__board {
     grid-template-columns: repeat(auto-fill, minmax(90px, 90px));
   }
 }
-@media screen and (max-width: 800px) and (min-width: 320px) {
+@media screen and (max-width: 800px) and (min-width: 420px) {
   #memory .memory .memory__board {
     grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
   }
@@ -1162,13 +1163,13 @@ footer .copyright {
   align-items: center;
   border-radius: 15px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   #memory .memory .plant {
     width: 100px;
     height: 100px;
   }
 }
-@media screen and (max-width: 800px) and (min-width: 320px) {
+@media screen and (max-width: 800px) and (min-width: 420px) {
   #memory .memory .plant {
     width: 120px;
     height: 120px;
@@ -1186,13 +1187,13 @@ footer .copyright {
   transition: opacity 0.25s;
   border-radius: 15px;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   #memory .memory .plant__img {
     width: 100px;
     height: 100px;
   }
 }
-@media screen and (max-width: 800px) and (min-width: 320px) {
+@media screen and (max-width: 800px) and (min-width: 420px) {
   #memory .memory .plant__img {
     width: 120px;
     height: 120px;
@@ -1419,4 +1420,47 @@ Generic layout (demo looks)*/
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+#contact p {
+  padding: 20px;
+}
+#contact form {
+  margin: auto;
+  padding: 20px;
+  max-width: 800px;
+  display: grid;
+  gap: 8px;
+  line-height: 1.9;
+}
+@media screen and (min-width: 420px) {
+  #contact form {
+    grid-template-columns: 25% 60%;
+    grid-template-rows: auto;
+  }
+}
+#contact form label {
+  font-weight: bold;
+  color: #1F3817;
+}
+#contact form textarea {
+  max-width: 100%;
+  min-height: 250px;
+  margin-top: 25px;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+#contact form input, #contact form textarea {
+  border-radius: 8px;
+  border-color: #1F3817;
+  background-color: #75A095;
+  font-family: "Quicksand", sans-serif;
+  padding: 3px;
+}
+#contact form .submitbutton {
+  font-weight: bold;
+  background-color: #D4936A;
+  font-family: "Quicksand", sans-serif;
+  height: 50px;
+  grid-column-start: 2;
 }/*# sourceMappingURL=style.css.map */

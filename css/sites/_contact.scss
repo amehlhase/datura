@@ -1,0 +1,56 @@
+#contact {
+
+    p {
+        padding: 20px;
+    }
+
+
+    form {
+        margin: auto;
+        padding: 20px;
+        max-width: 800px;
+        display: grid;
+        gap: 8px;
+        line-height: 1.9;
+
+        @media screen and (min-width: $mq-breakpoint-mobile) {
+            grid-template-columns: 25% 60%;
+            grid-template-rows: auto;
+        }
+        
+
+        @media screen and (max-width: $mq-breakpoint-mobile) {
+
+        }
+
+        label {
+            font-weight: bold;
+            color: $color-green-dark;
+        }
+
+
+        textarea {
+            max-width: 100%;
+            min-height: 250px;
+            margin-top: 25px;
+            grid-column-start: 1;
+            grid-column-end: span 2;
+        }
+
+        input, textarea {
+            border-radius: 8px;
+            border-color: $color-green-dark;
+            background-color: $color-green;
+            font-family: 'Quicksand', sans-serif;
+            padding: 3px;
+        }
+
+        .submitbutton {
+            font-weight: bold;
+            background-color: $color-accent-light;
+            font-family: 'Quicksand', sans-serif;
+            height: 50px;
+            grid-column-start: 2;
+        }
+    }
+}
