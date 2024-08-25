@@ -1,6 +1,5 @@
-document.writeln(
-  ` <ul>
-<li><a href="../index.html">Start</a></li>
+const nav = document.getElementById("nav");
+let html = `<ul><li><a href="../index.html">Start</a></li>
 <li>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>  
   <ul class="dropdown">
     <li><a href="../sites/all-plants.html">Alle Pflanzen</a></li>
@@ -22,5 +21,6 @@ document.writeln(
       <li><a href="../sites/impressum.html">Impressum</a></li>
     </ul>
   </li>
-</ul>`
-);
+</ul>`;
+
+nav.insertAdjacentHTML("afterbegin", html);
