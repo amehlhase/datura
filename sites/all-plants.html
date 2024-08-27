@@ -45,9 +45,7 @@
 
       <h3 class="center">Filtern:</h3>
 
-      <div class="filter-container">
-
-      <form name="light">
+        <form name="filters">
         <div class="multiple-choice">
         <span><b>Standort:</b><br/></span>
         <label for="halbschattig">
@@ -63,27 +61,26 @@
           sonnig
         </label>
       </div>
-    </form>
-
-
+    
       <div class="multiple-choice">
         <span><b>Wasserbedarf:</b><br/></span>
         <label for="wenigwasser">
-          <input type="checkbox" name="checkwaterdemand" value="0" id="wenigwasser">
+          <input type="checkbox" name="checkwenigwasser" value="0" id="wenigwasser" checked>
           wenig
         </label><br/>
         <label for="mittelwasser">
-          <input type="checkbox" name="checkwaterdemand" value="1" id="mittelwasser">
+          <input type="checkbox" name="checkmittelwasser" value="1" id="mittelwasser" checked>
           mittel
         </label><br />
         <label for="vielwasser">
-          <input type="checkbox" name="checkwaterdemand" value="2" id="vielwasser">
+          <input type="checkbox" name="checkvielwasser" value="2" id="vielwasser" checked>
           hoch
         </label>
       </div>
+    
 
 
-      <div class="single-choice">
+      <div class="single-choice filter">
       <div class="checkbox">
         <label class="switch" for="checktoxic">
           <input type="checkbox" name="checktoxic" id="checktoxic" />
@@ -92,14 +89,14 @@
         <span>Nur ungiftige</span>
       </div>
 
-      <div class="checkbox">
+      <div class="checkbox filter">
         <label class="switch" for="check-availability">
           <input type="checkbox" name="checkavailability" id="check-availability" />
           <div class="slider round"></div> 
         </label>
         <span>Aktuell lieferbar</span>
       </div>
-    </div>
+    </form>
 
       </div>
 
@@ -110,7 +107,7 @@
 
     <div class="divider50px"></div>
 
-    <section id="plantcards" class="checkhell checksonnig checkhalbschattig">        
+    <section id="plantcards" class="checkhell checksonnig checkhalbschattig wenigwasser mittelwasser vielwasser">        
         
     </section>
 

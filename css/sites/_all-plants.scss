@@ -7,7 +7,7 @@
   padding: 15px;
   font-size: 20px;
 
-  .filter-container {
+  form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -94,7 +94,10 @@
 
 #plantcards.checkhell article.hell,
 #plantcards.checksonnig article.sonnig,
-#plantcards.checkhalbschattig article.halbschattig {
+#plantcards.checkhalbschattig article.halbschattig,
+#plantcards.checkwenigwasser article.wenigwasser,
+#plantcards.checkmittelwasser article.mittelwasser,
+#plantcards.checkvielwasser article.vielwasser {
       display: block;
     }
 

@@ -36,7 +36,9 @@ getPlants().then((data) => {
   data.forEach((data) => {
     plantcards.insertAdjacentHTML(
       "afterbegin",
-      `<article class="plantcard ${getPlantLight(data.Light)}">
+      `<article class="plantcard ${getPlantLight(data.Light)} ${getPlantWater(
+        data.WaterDemand
+      )}wasser">
         <div class="article-wrapper">
           <figure>
             <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
@@ -84,9 +86,7 @@ getPlants().then((data) => {
 //   });
 // }
 
-document.forms.light.addEventListener("change", (e) => {
-  // #TODO: Class lösen
-  // plantcard.classList.remove("allvisible");
+document.forms.filters.addEventListener("change", (e) => {
   let form = e.target.form;
   plantcards.className = "";
   [...form.elements]
