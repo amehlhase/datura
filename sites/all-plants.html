@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../js/lodash.js"></script>
+    <script defer src="../js/all-plants.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,21 +47,23 @@
 
       <div class="filter-container">
 
+      <form name="light">
         <div class="multiple-choice">
         <span><b>Standort:</b><br/></span>
         <label for="halbschattig">
-          <input type="checkbox" name="checklight" value="0" id="halbschattig">
+          <input type="checkbox" name="checkhalbschattig" value="0" id="halbschattig" checked>
           halbschattig
         </label><br/>
         <label for="hell">
-          <input type="checkbox" name="checklight" value="1" id="hell">
+          <input type="checkbox" name="checkhell" value="1" id="hell" checked>
           hell
         </label><br />
         <label for="sonnig">
-          <input type="checkbox" name="checklight" value="2" id="sonnig">
+          <input type="checkbox" name="checksonnig" value="2" id="sonnig" checked>
           sonnig
         </label>
       </div>
+    </form>
 
 
       <div class="multiple-choice">
@@ -107,15 +110,9 @@
 
     <div class="divider50px"></div>
 
-    <section class="articles" id="plantcards">
-
-
-
-      <script language="javascript" type="text/javascript"  src="../js/all-plants.js"></script>
-
+    <section id="plantcards" class="checkhell checksonnig checkhalbschattig">        
         
-        
-      </section>
+    </section>
 
 
     <!-- FOOTER -->

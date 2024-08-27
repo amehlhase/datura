@@ -1,8 +1,9 @@
 let plantsArr = [];
 const plantcards = document.getElementById("plantcards");
+const plantcard = document.getElementsByClassName("plantcard");
 
 let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-let plantcard = Array.from(document.querySelectorAll(".plantcard"));
+// let plantcard = Array.from(document.querySelectorAll(".plantcard"));
 let checked = {};
 
 async function getPlants() {
@@ -35,7 +36,7 @@ getPlants().then((data) => {
   data.forEach((data) => {
     plantcards.insertAdjacentHTML(
       "afterbegin",
-      `<article class="plantcard">
+      `<article class="plantcard ${getPlantLight(data.Light)}">
         <div class="article-wrapper">
           <figure>
             <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
@@ -64,40 +65,50 @@ getPlants().then((data) => {
 
 /* Filter functions */
 
-getChecked("checklight");
+// getChecked("checklight");
 
-Array.prototype.forEach.call(allCheckboxes, function (el) {
-  el.addEventListener("change", toggleCheckbox);
+// Array.prototype.forEach.call(allCheckboxes, function (el) {
+//   el.addEventListener("change", toggleCheckbox);
+// });
+
+// function toggleCheckbox(e) {
+//   getChecked(e.target.name);
+//   // setVisibility();
+// }
+
+// function getChecked(name) {
+//   checked[name] = Array.from(
+//     document.querySelectorAll("input[name=" + name + "]:checked")
+//   ).map(function (el) {
+//     return el.value;
+//   });
+// }
+
+document.forms.light.addEventListener("change", (e) => {
+  // #TODO: Class lösen
+  // plantcard.classList.remove("allvisible");
+  let form = e.target.form;
+  plantcards.className = "";
+  [...form.elements]
+    .filter((input) => input.checked)
+    .forEach((input) => plantcards.classList.add(input.name));
 });
 
-function toggleCheckbox(e) {
-  getChecked(e.target.name);
-  setVisibility();
-}
+// function setVisibility() {
+//   plantcard.map(function (el) {
+//     let checklight = checked.checklight.length
+//       ? _.intersection(Array.from(el.classList), checked.checklight).length
+//       : true;
 
-function getChecked(name) {
-  checked[name] = Array.from(
-    document.querySelectorAll("input[name=" + name + "]:checked")
-  ).map(function (el) {
-    return el.value;
-  });
-}
-
-function setVisibility() {
-  plantcard.map(function (el) {
-    let checklight = checked.checklight.length
-      ? _.intersection(Array.from(el.classList), checked.checklight).length
-      : true;
-
-    if (checklight) {
-      el.style.display = "block";
-      console.log("block");
-    } else {
-      el.style.display = "none";
-      console.log("none");
-    }
-  });
-}
+//     if (checklight) {
+//       el.style.display = "block";
+//       console.log("block");
+//     } else {
+//       el.style.display = "none";
+//       console.log("none");
+//     }
+//   });
+// }
 
 /* Helper functions */
 

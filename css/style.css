@@ -1288,6 +1288,16 @@ footer .copyright {
 
 /* --------------------------------------------*/
 /* CARDS STYLING */
+#plantcards article {
+  display: none;
+}
+
+#plantcards.checkhell article.hell,
+#plantcards.checksonnig article.sonnig,
+#plantcards.checkhalbschattig article.halbschattig {
+  display: block;
+}
+
 article {
   --img-scale: 1.001;
   --link-icon-translate: -20px;
@@ -1371,7 +1381,7 @@ article:has(:hover, :focus) {
 
 /************************ 
 Generic layout (demo looks)*/
-.articles {
+#plantcards {
   display: grid;
   max-width: 1200px;
   margin-inline: auto;
