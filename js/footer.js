@@ -1,5 +1,6 @@
-document.writeln(
-  `  
+const footer = document.getElementById("footer");
+
+let footerHtml = `  
     <p class="social">
         <a href="https://www.etsy.com/" target="_blank"><i class="fa fa-etsy" aria-hidden="true"></i></a>
         <a href="https://de-de.facebook.com/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
@@ -10,5 +11,6 @@ document.writeln(
     <p class="copyright">© ${new Date().getFullYear()}<br />
     This website is a project by Anja Mehlhase<br />
     Datura is a fictional webshop<br /><br />
-    All images are from <a href="https://unsplash.com/">Unsplash.com <i class="fa fa-heart-o" aria-hidden="true"></i></a></p>`
-);
+    All images are from <a href="https://unsplash.com/">Unsplash.com <i class="fa fa-heart-o" aria-hidden="true"></i></a></p>`;
+
+footer.insertAdjacentHTML("afterbegin", footerHtml);

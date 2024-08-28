@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "sweetalert": "^2.1.2"
+    "lodash": "^4.17.15"
   }
 }

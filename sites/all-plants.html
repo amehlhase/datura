@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../js/lodash.js"></script>
-    <script defer src="../js/all-plants.js"></script>
+    <script src="../js/lodash.js"></script>
+    <script src="../js/all-plants.js" type="module"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,15 +49,15 @@
         <div class="multiple-choice">
         <span><b>Standort:</b><br/></span>
         <label for="halbschattig">
-          <input type="checkbox" name="checkhalbschattig" value="0" id="halbschattig" checked>
+          <input type="checkbox" name="checklight" value="0" id="halbschattig">
           halbschattig
         </label><br/>
         <label for="hell">
-          <input type="checkbox" name="checkhell" value="1" id="hell" checked>
+          <input type="checkbox" name="checklight" value="1" id="hell">
           hell
         </label><br />
         <label for="sonnig">
-          <input type="checkbox" name="checksonnig" value="2" id="sonnig" checked>
+          <input type="checkbox" name="checklight" value="2" id="sonnig">
           sonnig
         </label>
       </div>
@@ -65,15 +65,15 @@
       <div class="multiple-choice">
         <span><b>Wasserbedarf:</b><br/></span>
         <label for="wenigwasser">
-          <input type="checkbox" name="checkwenigwasser" value="0" id="wenigwasser" checked>
+          <input type="checkbox" name="checkwenigwasser" value="0" id="wenigwasser">
           wenig
         </label><br/>
         <label for="mittelwasser">
-          <input type="checkbox" name="checkmittelwasser" value="1" id="mittelwasser" checked>
+          <input type="checkbox" name="checkmittelwasser" value="1" id="mittelwasser">
           mittel
         </label><br />
         <label for="vielwasser">
-          <input type="checkbox" name="checkvielwasser" value="2" id="vielwasser" checked>
+          <input type="checkbox" name="checkvielwasser" value="2" id="vielwasser">
           hoch
         </label>
       </div>
@@ -83,7 +83,7 @@
       <div class="single-choice filter">
       <div class="checkbox">
         <label class="switch" for="checktoxic">
-          <input type="checkbox" name="checktoxic" id="checktoxic" />
+          <input type="checkbox" name="checktoxic" id="checktoxic" value="false" />
           <div class="slider round"></div> 
         </label>
         <span>Nur ungiftige</span>
@@ -114,7 +114,7 @@
 
     <!-- FOOTER -->
     
-    <footer>
+    <footer id="footer">
 
       <script language="javascript" type="text/javascript"  src="../js/footer.js"></script>
 

@@ -1,10 +1,9 @@
+// import _ from "../js/lodash";
+// #TODO: Import lodash
+
 let plantsArr = [];
 const plantcards = document.getElementById("plantcards");
-const plantcard = document.getElementsByClassName("plantcard");
-
-let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-// let plantcard = Array.from(document.querySelectorAll(".plantcard"));
-let checked = {};
+// const plantcard = document.getElementsByClassName("plantcard");
 
 async function getPlants() {
   try {
@@ -38,7 +37,7 @@ getPlants().then((data) => {
       "afterbegin",
       `<article class="plantcard ${getPlantLight(data.Light)} ${getPlantWater(
         data.WaterDemand
-      )}wasser">
+      )}wasser ${getPlantToxic(data.Toxic)}">
         <div class="article-wrapper">
           <figure>
             <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
@@ -67,48 +66,46 @@ getPlants().then((data) => {
 
 /* Filter functions */
 
-// getChecked("checklight");
+let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+let allPlantcards = Array.from(document.querySelectorAll(".plantcard"));
+let checked = {};
 
-// Array.prototype.forEach.call(allCheckboxes, function (el) {
-//   el.addEventListener("change", toggleCheckbox);
-// });
+getChecked("checklight");
 
-// function toggleCheckbox(e) {
-//   getChecked(e.target.name);
-//   // setVisibility();
-// }
-
-// function getChecked(name) {
-//   checked[name] = Array.from(
-//     document.querySelectorAll("input[name=" + name + "]:checked")
-//   ).map(function (el) {
-//     return el.value;
-//   });
-// }
-
-document.forms.filters.addEventListener("change", (e) => {
-  let form = e.target.form;
-  plantcards.className = "";
-  [...form.elements]
-    .filter((input) => input.checked)
-    .forEach((input) => plantcards.classList.add(input.name));
+Array.prototype.forEach.call(allCheckboxes, function (el) {
+  el.addEventListener("change", toggleCheckbox);
 });
 
-// function setVisibility() {
-//   plantcard.map(function (el) {
-//     let checklight = checked.checklight.length
-//       ? _.intersection(Array.from(el.classList), checked.checklight).length
-//       : true;
+function toggleCheckbox(e) {
+  getChecked(e.target.name);
+  setVisibility();
+}
 
-//     if (checklight) {
-//       el.style.display = "block";
-//       console.log("block");
-//     } else {
-//       el.style.display = "none";
-//       console.log("none");
-//     }
-//   });
-// }
+function getChecked(name) {
+  checked[name] = Array.from(
+    document.querySelectorAll("input[name=" + name + "]:checked")
+  ).map(function (el) {
+    return el.id;
+  });
+}
+
+function setVisibility() {
+  allPlantcards.map(function (el) {
+    console.log(checklight);
+
+    let checklight = checked.checklight.length
+      ? _.intersection(Array.from(el.classList), checked.checklight).length
+      : true;
+
+    if (checklight) {
+      el.style.display = "block";
+      console.log("block");
+    } else {
+      el.style.display = "none";
+      console.log("none");
+    }
+  });
+}
 
 /* Helper functions */
 
@@ -148,8 +145,15 @@ function getPlantMaintenance(plantMaintenance) {
 function getPlantToxic(plantToxic) {
   switch (plantToxic) {
     case true:
-      return "Ja";
+      return "giftig";
     case false:
-      return "Nein";
+      return "ungiftig";
+  }
+}
+
+function getAvailability(plantAvailability) {
+  switch (plantAvailability) {
+    case (val = 0):
+      return "soldout";
   }
 }

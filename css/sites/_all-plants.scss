@@ -88,18 +88,22 @@
 
 /* CARDS STYLING */ 
 
-#plantcards article {
+.hidecard {
   display: none;
 }
 
-#plantcards.checkhell article.hell,
-#plantcards.checksonnig article.sonnig,
-#plantcards.checkhalbschattig article.halbschattig,
-#plantcards.checkwenigwasser article.wenigwasser,
-#plantcards.checkmittelwasser article.mittelwasser,
-#plantcards.checkvielwasser article.vielwasser {
-      display: block;
-    }
+// #plantcards article {
+//   display: none;
+// }
+
+// #plantcards.checkhell article.hell,
+// #plantcards.checksonnig article.sonnig,
+// #plantcards.checkhalbschattig article.halbschattig,
+// #plantcards.checkwenigwasser article.wenigwasser,
+// #plantcards.checkmittelwasser article.mittelwasser,
+// #plantcards.checkvielwasser article.vielwasser {
+//       display: block;
+//     }
 
 article {
     --img-scale: 1.001;

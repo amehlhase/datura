@@ -1,5 +1,5 @@
 const nav = document.getElementById("nav");
-let html = `<ul><li><a href="../index.html">Start</a></li>
+let navHtml = `<ul><li><a href="../index.html">Start</a></li>
 <li>Angebot <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>  
   <ul class="dropdown">
     <li><a href="../sites/all-plants.html">Alle Pflanzen</a></li>
@@ -23,4 +23,4 @@ let html = `<ul><li><a href="../index.html">Start</a></li>
   </li>
 </ul>`;
 
-nav.insertAdjacentHTML("afterbegin", html);
+nav.insertAdjacentHTML("afterbegin", navHtml);
