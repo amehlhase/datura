@@ -1,9 +1,6 @@
-// import _ from "../js/lodash";
-// #TODO: Import lodash
-
-let plantsArr = [];
-const plantcards = document.getElementById("plantcards");
-// const plantcard = document.getElementsByClassName("plantcard");
+let allPlantcards = [];
+let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+let checked = {};
 
 async function getPlants() {
   try {
@@ -14,15 +11,7 @@ async function getPlants() {
     if (!response.ok) {
       throw new Error(`Error! status: ${response.status}`);
     }
-
     let data = await response.json();
-
-    for (const key in data) {
-      {
-        plantsArr.push(data[key]);
-      }
-    }
-
     return data;
   } catch (error) {
     console.log(error);
@@ -33,44 +22,46 @@ async function getPlants() {
 
 getPlants().then((data) => {
   data.forEach((data) => {
-    plantcards.insertAdjacentHTML(
-      "afterbegin",
-      `<article class="plantcard ${getPlantLight(data.Light)} ${getPlantWater(
-        data.WaterDemand
-      )}wasser ${getPlantToxic(data.Toxic)}">
-        <div class="article-wrapper">
-          <figure>
-            <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
-          </figure>
-          <div class="article-body">
-            <h2>${data.Name}</h2>
-            <h3>${data.NameLatin}</h3>
-            <p>
-               Standort: ${getPlantLight(data.Light)}<br/>
-               Wasserbedarf: ${getPlantWater(data.WaterDemand)}<br/>
-               Schwierigkeitsgrad: ${getPlantMaintenance(data.Maintenance)}<br/>
-               Giftig: ${getPlantToxic(data.Toxic)}<br/>
-            </p>
-            <a href="#" class="read-more">
-              Read more <span class="sr-only">about this is some title</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>`
-    );
+    displayPlantcards(data);
   });
+  allPlantcards = Array.from(document.querySelectorAll(".plantcard"));
 });
+
+function displayPlantcards(data) {
+  plantcards.insertAdjacentHTML(
+    "afterbegin",
+    `<article class="plantcard ${getPlantLight(data.Light)} ${getPlantWater(
+      data.WaterDemand
+    )}wasser ${getPlantToxic(data.Toxic)}">
+      <div class="article-wrapper">
+        <figure>
+          <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
+        </figure>
+        <div class="article-body">
+          <h2>${data.Name}</h2>
+          <h3>${data.NameLatin}</h3>
+          <p>
+             Standort: ${getPlantLight(data.Light)}<br/>
+             Wasserbedarf: ${getPlantWater(data.WaterDemand)}<br/>
+             Schwierigkeitsgrad: ${getPlantMaintenance(data.Maintenance)}<br/>
+             Giftig: ${getPlantToxic(data.Toxic)}<br/>
+          </p>
+          <a href="#" class="read-more">
+            Read more <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>`
+  );
+}
 
 /* Filter functions */
 
-let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-let allPlantcards = Array.from(document.querySelectorAll(".plantcard"));
-let checked = {};
-
 getChecked("checklight");
+getChecked("checkwater");
 
 Array.prototype.forEach.call(allCheckboxes, function (el) {
   el.addEventListener("change", toggleCheckbox);
@@ -91,18 +82,17 @@ function getChecked(name) {
 
 function setVisibility() {
   allPlantcards.map(function (el) {
-    console.log(checklight);
-
     let checklight = checked.checklight.length
       ? _.intersection(Array.from(el.classList), checked.checklight).length
       : true;
+    let checkwater = checked.checkwater.length
+      ? _.intersection(Array.from(el.classList), checked.checkwater).length
+      : true;
 
-    if (checklight) {
+    if (checklight && checkwater) {
       el.style.display = "block";
-      console.log("block");
     } else {
       el.style.display = "none";
-      console.log("none");
     }
   });
 }

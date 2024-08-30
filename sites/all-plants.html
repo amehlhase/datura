@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/lodash.js"></script>
-    <script src="../js/all-plants.js" type="module"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -65,15 +64,15 @@
       <div class="multiple-choice">
         <span><b>Wasserbedarf:</b><br/></span>
         <label for="wenigwasser">
-          <input type="checkbox" name="checkwenigwasser" value="0" id="wenigwasser">
+          <input type="checkbox" name="checkwater" value="0" id="wenigwasser">
           wenig
         </label><br/>
         <label for="mittelwasser">
-          <input type="checkbox" name="checkmittelwasser" value="1" id="mittelwasser">
+          <input type="checkbox" name="checkwater" value="1" id="mittelwasser">
           mittel
         </label><br />
         <label for="vielwasser">
-          <input type="checkbox" name="checkvielwasser" value="2" id="vielwasser">
+          <input type="checkbox" name="checkwater" value="2" id="vielwasser">
           hoch
         </label>
       </div>
@@ -83,7 +82,7 @@
       <div class="single-choice filter">
       <div class="checkbox">
         <label class="switch" for="checktoxic">
-          <input type="checkbox" name="checktoxic" id="checktoxic" value="false" />
+          <input type="checkbox" name="checktoxic" id="checktoxic" />
           <div class="slider round"></div> 
         </label>
         <span>Nur ungiftige</span>
@@ -107,7 +106,9 @@
 
     <div class="divider50px"></div>
 
-    <section id="plantcards" class="checkhell checksonnig checkhalbschattig wenigwasser mittelwasser vielwasser">        
+    <section id="plantcards">
+      
+      <script src="../js/all-plants.js" type="module"></script>
         
     </section>
 
