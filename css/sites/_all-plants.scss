@@ -88,22 +88,6 @@
 
 /* CARDS STYLING */ 
 
-.hidecard {
-  display: none;
-}
-
-// #plantcards article {
-//   display: none;
-// }
-
-// #plantcards.checkhell article.hell,
-// #plantcards.checksonnig article.sonnig,
-// #plantcards.checkhalbschattig article.halbschattig,
-// #plantcards.checkwenigwasser article.wenigwasser,
-// #plantcards.checkmittelwasser article.mittelwasser,
-// #plantcards.checkvielwasser article.vielwasser {
-//       display: block;
-//     }
 
 article {
     --img-scale: 1.001;
@@ -191,11 +175,6 @@ article {
     --link-icon-opacity: 1;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
-  
-  
-  /************************ 
-  Generic layout (demo looks)*/
-  
 
   
   #plantcards {
@@ -207,6 +186,19 @@ article {
     gap: 24px;
     font-size: 1.2rem;
     line-height: 1.6rem;
+
+    .soldout {
+      background-color: $color-grey;
+
+      img {
+        opacity: 50%;
+      }
+
+      .read-more {
+        display: none;
+  }
+}
+
   }
   
   @media screen and (max-width: $mq-breakpoint-desktop) {

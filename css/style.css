@@ -1288,10 +1288,6 @@ footer .copyright {
 
 /* --------------------------------------------*/
 /* CARDS STYLING */
-.hidecard {
-  display: none;
-}
-
 article {
   --img-scale: 1.001;
   --link-icon-translate: -20px;
@@ -1373,8 +1369,6 @@ article:has(:hover, :focus) {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-/************************ 
-Generic layout (demo looks)*/
 #plantcards {
   display: grid;
   max-width: 1200px;
@@ -1384,6 +1378,15 @@ Generic layout (demo looks)*/
   gap: 24px;
   font-size: 1.2rem;
   line-height: 1.6rem;
+}
+#plantcards .soldout {
+  background-color: #ccc;
+}
+#plantcards .soldout img {
+  opacity: 50%;
+}
+#plantcards .soldout .read-more {
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
