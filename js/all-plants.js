@@ -32,7 +32,7 @@ function displayPlantcards(data) {
     "afterbegin",
     `<article class="plantcard ${getPlantLight(data.Light)} ${getPlantWater(
       data.WaterDemand
-    )}wasser ${getPlantToxic(data.Toxic)}">
+    )}wasser ${getPlantToxic(data.Toxic)} ${getPlantAvailability(data.Stock)}">
       <div class="article-wrapper">
         <figure>
           <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
@@ -47,7 +47,7 @@ function displayPlantcards(data) {
              Giftig: ${getPlantToxic(data.Toxic)}<br/>
           </p>
           <a href="#" class="read-more">
-            Read more <span class="sr-only">about this is some title</span>
+            Jetzt kaufen <span class="sr-only">about this is some title</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
@@ -62,6 +62,8 @@ function displayPlantcards(data) {
 
 getChecked("checklight");
 getChecked("checkwater");
+getChecked("checktoxic");
+getChecked("checkavailability");
 
 Array.prototype.forEach.call(allCheckboxes, function (el) {
   el.addEventListener("change", toggleCheckbox);
@@ -88,8 +90,15 @@ function setVisibility() {
     let checkwater = checked.checkwater.length
       ? _.intersection(Array.from(el.classList), checked.checkwater).length
       : true;
+    let checktoxic = checked.checktoxic.length
+      ? _.intersection(Array.from(el.classList), checked.checktoxic).length
+      : true;
+    let checkavailability = checked.checkavailability.length
+      ? _.intersection(Array.from(el.classList), checked.checkavailability)
+          .length
+      : true;
 
-    if (checklight && checkwater) {
+    if (checklight && checkwater && checktoxic && checkavailability) {
       el.style.display = "block";
     } else {
       el.style.display = "none";
@@ -141,9 +150,11 @@ function getPlantToxic(plantToxic) {
   }
 }
 
-function getAvailability(plantAvailability) {
-  switch (plantAvailability) {
+function getPlantAvailability(val) {
+  switch (val) {
     case (val = 0):
       return "soldout";
+    default:
+      return "available";
   }
 }
