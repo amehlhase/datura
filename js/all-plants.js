@@ -2,6 +2,8 @@ let allPlantcards = [];
 let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
 let checked = {};
 
+/* LOAD PLANTS */
+
 async function getPlants() {
   try {
     const response = await fetch("../files/pflanzen.json", {
@@ -18,7 +20,7 @@ async function getPlants() {
   }
 }
 
-/* Load plants */
+/* DISPLAY PLANTS */
 
 getPlants().then((data) => {
   data.forEach((data) => {
@@ -32,7 +34,9 @@ function displayPlantcards(data) {
     "afterbegin",
     `<article class="plantcard ${getPlantLight(data.Light)} ${getPlantWater(
       data.WaterDemand
-    )}wasser ${getPlantToxic(data.Toxic)} ${getPlantAvailability(data.Stock)}">
+    )}wasser ${getPlantMaintenance(data.Maintenance)} ${getPlantToxic(
+      data.Toxic
+    )} ${getPlantAvailability(data.Stock)}">
       <div class="article-wrapper">
         <figure>
           <img src="../images/plant_types/${data.Image}" alt="${data.Name}" />
@@ -43,7 +47,9 @@ function displayPlantcards(data) {
           <p>
              Standort: ${getPlantLight(data.Light)}<br/>
              Wasserbedarf: ${getPlantWater(data.WaterDemand)}<br/>
-             Schwierigkeitsgrad: ${getPlantMaintenance(data.Maintenance)}<br/>
+             Schwierigkeitsgrad: ${getPlantMaintenanceText(
+               data.Maintenance
+             )}<br/>
              Giftig: ${getPlantToxic(data.Toxic)}<br/>
           </p>
           <a href="#" class="read-more">
@@ -59,12 +65,13 @@ function displayPlantcards(data) {
   );
 }
 
-/* Filter functions */
+/* FILTER FUNCTIONS */
 
 getChecked("checklight");
 getChecked("checkwater");
 getChecked("checktoxic");
 getChecked("checkavailability");
+getChecked("checkmaintenance");
 
 Array.prototype.forEach.call(allCheckboxes, function (el) {
   el.addEventListener("change", toggleCheckbox);
@@ -98,8 +105,18 @@ function setVisibility() {
       ? _.intersection(Array.from(el.classList), checked.checkavailability)
           .length
       : true;
+    let checkmaintenance = checked.checkmaintenance.length
+      ? _.intersection(Array.from(el.classList), checked.checkmaintenance)
+          .length
+      : true;
 
-    if (checklight && checkwater && checktoxic && checkavailability) {
+    if (
+      checklight &&
+      checkwater &&
+      checktoxic &&
+      checkavailability &&
+      checkmaintenance
+    ) {
       el.style.display = "block";
     } else {
       el.style.display = "none";
@@ -107,10 +124,10 @@ function setVisibility() {
   });
 }
 
-/* Helper functions */
+/* HELPER FUNCTIONS (DATA) */
 
-function getPlantLight(plantLight) {
-  switch (plantLight) {
+function getPlantLight(val) {
+  switch (val) {
     case 0:
       return `halbschattig`;
     case 1:
@@ -120,8 +137,8 @@ function getPlantLight(plantLight) {
   }
 }
 
-function getPlantWater(plantWater) {
-  switch (plantWater) {
+function getPlantWater(val) {
+  switch (val) {
     case 0:
       return `wenig`;
     case 1:
@@ -131,19 +148,30 @@ function getPlantWater(plantWater) {
   }
 }
 
-function getPlantMaintenance(plantMaintenance) {
-  switch (plantMaintenance) {
+function getPlantMaintenanceText(val) {
+  switch (val) {
     case 0:
-      return `Ich bin eher anspruchslos`;
+      return `Ich bin sehr pflegeleicht`;
     case 1:
-      return `Ich bin eine umgängliche Zeitgenossin`;
+      return `Ich bin eine eher umgängliche Mitbewohnerin`;
     case 2:
       return `Ich brauche viel Aufmerksamkeit und gute Pflege`;
   }
 }
 
-function getPlantToxic(plantToxic) {
-  switch (plantToxic) {
+function getPlantMaintenance(val) {
+  switch (val) {
+    case 0:
+      return `pflegeleicht`;
+    case 1:
+      return `pflegemittel`;
+    case 2:
+      return `pflegehoch`;
+  }
+}
+
+function getPlantToxic(val) {
+  switch (val) {
     case true:
       return "giftig";
     case false:
