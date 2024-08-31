@@ -1288,6 +1288,33 @@ footer .copyright {
 
 /* --------------------------------------------*/
 /* CARDS STYLING */
+#plantcards {
+  display: grid;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 24px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  /* STYLING SOLD OUT / AVAILABLE */
+}
+#plantcards .soldout {
+  background-color: #ccc;
+}
+#plantcards .soldout img {
+  opacity: 50%;
+}
+#plantcards .soldout .read-more {
+  display: none;
+}
+#plantcards .out-of-stock {
+  font-style: italic;
+}
+#plantcards .available .out-of-stock {
+  display: none;
+}
+
 article {
   --img-scale: 1.001;
   --link-icon-translate: -20px;
@@ -1300,7 +1327,24 @@ article {
   transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
-
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1F3817;
+}
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+article a:focus {
+  outline: 2px dotted #1F3817;
+}
 article a::after {
   position: absolute;
   inset-block: 0;
@@ -1308,8 +1352,6 @@ article a::after {
   cursor: pointer;
   content: "";
 }
-
-/* basic card elements styling */
 article h2 {
   margin: 0 0 14px 0;
   font-size: 1.9rem;
@@ -1321,47 +1363,22 @@ article h3 {
   font-weight: normal;
   font-style: italic;
 }
-
-figure {
+article .article-wrapper figure {
   margin: 0;
   padding: 0;
   aspect-ratio: 7/9;
   overflow: hidden;
 }
-
-article img {
+article .article-wrapper figure img {
   max-width: 100%;
   transform-origin: center;
   transform: scale(var(--img-scale));
   transition: transform 0.4s ease-in-out;
 }
-
-.article-body {
+article .article-wrapper .article-body {
   padding: 30px;
 }
 
-article a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #1F3817;
-}
-
-article a:focus {
-  outline: 1px dotted #1F3817;
-}
-
-article a .icon {
-  min-width: 24px;
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
-  transform: translateX(var(--link-icon-translate));
-  opacity: var(--link-icon-opacity);
-  transition: all 0.3s;
-}
-
-/* using the has() relational pseudo selector to update our custom properties */
 article:has(:hover, :focus) {
   --img-scale: 1.1;
   --link-icon-translate: 0;
@@ -1369,26 +1386,18 @@ article:has(:hover, :focus) {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-#plantcards {
-  display: grid;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 24px;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-}
-#plantcards .soldout {
-  background-color: #ccc;
-}
-#plantcards .soldout img {
-  opacity: 50%;
-}
-#plantcards .soldout .read-more {
-  display: none;
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
+/* MEDIA QUERIES / RESPONSIVENESS */
 @media screen and (max-width: 800px) {
   article {
     container: card/inline-size;
@@ -1418,17 +1427,6 @@ article:has(:hover, :focus) {
        object-fit: cover;
   }
 }
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 #contact p {
   padding: 20px;
 }
