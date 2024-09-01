@@ -10,6 +10,8 @@ const effectObserver = new IntersectionObserver(
 
 const effectElements = document.querySelectorAll(".animate__animated");
 
+let attempts = 0;
+
 for (const element of effectElements) {
   effectObserver.observe(element);
 }
@@ -30,8 +32,6 @@ function delay(milliseconds) {
     setTimeout(resolve, milliseconds);
   });
 }
-
-let attempts = 0;
 
 function initMemory() {
   document.querySelector(".new__game").addEventListener("click", restartMemory);

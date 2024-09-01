@@ -1289,6 +1289,10 @@ footer .copyright {
 .plant-filters .slider.round:before {
   border-radius: 50%;
 }
+.plant-filters #plant-counter {
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* --------------------------------------------*/
 /* CARDS STYLING */

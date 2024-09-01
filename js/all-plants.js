@@ -2,6 +2,9 @@ let allPlantcards = [];
 let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
 let checked = {};
 
+let counterElement = document.getElementById("plant-counter");
+let plantCounter = 0;
+
 /* LOAD PLANTS */
 
 async function getPlants() {
@@ -14,6 +17,10 @@ async function getPlants() {
       throw new Error(`Error! status: ${response.status}`);
     }
     let data = await response.json();
+
+    plantCounter = data.length;
+    displayPlantCounter(plantCounter);
+
     return data;
   } catch (error) {
     console.log(error);
@@ -80,6 +87,7 @@ Array.prototype.forEach.call(allCheckboxes, function (el) {
 function toggleCheckbox(e) {
   getChecked(e.target.name);
   setVisibility();
+  displayPlantCounter(plantCounter);
 }
 
 function getChecked(name) {
@@ -91,6 +99,7 @@ function getChecked(name) {
 }
 
 function setVisibility() {
+  plantCounter = 0;
   allPlantcards.map(function (el) {
     let checklight = checked.checklight.length
       ? _.intersection(Array.from(el.classList), checked.checklight).length
@@ -118,10 +127,17 @@ function setVisibility() {
       checkmaintenance
     ) {
       el.style.display = "block";
+      plantCounter += 1;
     } else {
       el.style.display = "none";
     }
   });
+}
+
+/* PLANT COUNTER */
+
+function displayPlantCounter(plantCounter) {
+  counterElement.innerHTML = `${plantCounter} Pflanzen passen zu deinen aktuellen Suchkriterien`;
 }
 
 /* HELPER FUNCTIONS (DATA) */
