@@ -1073,15 +1073,15 @@ footer .copyright {
     max-width: 380px;
   }
 }
-#error-404 #text-404 {
-  min-width: 300px;
-}
 @media screen and (min-width: 420px) {
   #error-404 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+#error-404 #text-404 {
+  min-width: 300px;
 }
 #error-404 img {
   border-radius: 8px;

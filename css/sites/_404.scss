@@ -1,6 +1,10 @@
 
 #error-404 {
 
+    margin: 30px;
+    text-align: center;
+    vertical-align: middle;
+
     @media screen and (max-width: $mq-breakpoint-desktop) and (min-width: $mq-breakpoint-mobile) {
         img {
             min-width: 350px;
@@ -16,18 +20,14 @@
         }
     }
 
-    margin: 30px;
-    text-align: center;
-    vertical-align: middle;
-
-    #text-404 {
-        min-width: 300px;
-    }
-
     @media screen and (min-width: $mq-breakpoint-mobile) {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    #text-404 {
+        min-width: 300px;
     }
 
     img {
